@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<urlList>
+  <URLs>
+    <!--<urlItem baseURL="http://www.whas11.com/" showTime="10000"/>
+    <urlItem baseURL="http://www.ford.com" showTime="3000" />-->
+    <urlItem baseURL="/areas/google/analyticshistory.aspx?v=prevday" showTime="10000" />
+    <urlItem baseURL="/areas/google/analyticshistory.aspx?v=prevmonth" showTime="10000" />
+  </URLs>
+</urlList>

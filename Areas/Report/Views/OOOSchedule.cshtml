@@ -1,0 +1,132 @@
+﻿@model atlasNOC.Areas.Report.Models.ReportViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Report/Views/Shared/_Layout.cshtml";
+}
+<style>
+/* TABLE
+----------------------------------------------------------*/
+
+/*---------------------------------------------*/
+/*** Styles for any table as per style guide ***/
+/*---------------------------------------------*/
+/* Wrapper that goes around a table */
+.table-wrapper {
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 1100px;
+    float: left;
+}
+
+table.atlasnoc-table {
+    margin: 0 auto;
+    clear: both;
+    width: 1100px;
+    border-radius: 4px;
+}
+
+table.atlasnoc-table * {
+    font-family: Arial;
+}
+
+table.atlasnoc-table > thead > tr {
+    background-color: #ccc;
+    background-image: url(/Content/Images/Restyle/bg-control-header.png);
+    background-repeat: repeat-x;
+    height: 45px;
+}
+
+table.atlasnoc-table > thead > tr:first-child {
+    border-top-left-radius: 4px;
+}
+
+table.atlasnoc-table > thead > tr:last-child {
+    border-top-right-radius: 4px;
+}
+
+table.atlasnoc-table > thead > tr > th {
+    background: transparent;
+    color: #333;
+    cursor: default;
+    font-weight: bold;
+    font-size: 15px;
+    border: solid 1px #ccc;
+    border-left: none;
+    border-top: none;
+    padding-bottom: 3px !important;
+}
+
+table.atlasnoc-table > thead > tr > th:last-child {
+    border-right: none;
+}
+
+table.atlasnoc-table > tbody > tr {
+    min-height: 32px;
+    height: 36px;
+    cursor: pointer;
+}
+
+table.atlasnoc-table > tbody > tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+table.atlasnoc-table > tbody > tr:hover {
+    background-color: #ffffcc;
+}
+
+table.atlasnoc-table > tbody > tr > td, table.atlasnoc-table > tfoot > tr > td  {
+    max-width: 300px;
+    font-weight: normal;
+    font-size: 22px;
+    border-right: 1px solid #ccc;
+}
+
+table.atlasnoc-table tr.totals > td {
+    font-weight: bold;
+}
+
+table.atlasnoc-table > tbody > tr > td:last-child {
+    border-right: none;
+}
+
+.wrap-content {
+    cursor: pointer;
+    max-width: 200px;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+</style>
+
+
+<h2>atlasNOC OOO Schedule</h2>
+<div>
+    <div class="table-wrapper">
+        <table class="atlasnoc-table" @* style="width:1270px;"*@>
+            <thead>
+                <tr>
+                    <th class="ui-state-default">Name</th>
+                    <th class="ui-state-default">When</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                @foreach (var item in Model.OOOList.OOOs)
+                {
+                    <text>
+                        <tr class="body-row">
+                            <td>@item.name</td>
+                            <td>@item.when</td>
+                        </tr>
+                    </text>
+
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+</div>

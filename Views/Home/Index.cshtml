@@ -1,0 +1,55 @@
+﻿@model atlasNOC.Models.HomeIndex
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    var i = 0;
+    var itvl;
+    var urls = [
+    @foreach (var item in Model.urlList.URLs)
+    {
+        <text>"@item.baseURL"</text>
+        if (Model.urlList.URLs.Last() != item) { <text>,</text>}
+    }]
+    var showTimes = [
+    @foreach (var item in Model.urlList.URLs)
+    {
+        <text>"@item.showTime"</text>
+        if (Model.urlList.URLs.Last() != item) { <text>,</text>}
+        }]
+</script>
+
+    <div id="atlasNOC">
+    </div>
+
+    <style>
+
+        #atlasNOC {
+            min-height:100%;
+            min-width:100%;
+        }
+
+
+
+    </style>
+
+    <script type="text/javascript">
+        autoAdvance();
+        function updateiFrame(urlIndex)
+        {
+            clearInterval(itvl);
+            $("#atlasNOC").html("<iframe src='" + urls[i] + "' height='665' width='1190' frameborder='1' scrolling='no'></iframe>");
+            itvl = setInterval(function(){autoAdvance();},showTimes[i])
+        }
+        function autoAdvance() {
+            if (i == urls.length) { i = 0; window.location.replace("/");}
+            updateiFrame(i);
+            i++;
+        }
+</script>
+
+
+
